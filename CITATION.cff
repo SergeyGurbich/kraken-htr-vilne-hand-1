@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this model, please cite this repository as follows:"
+title: "Kraken HTR model: Vilne Yiddish Hand 1"
+authors:
+  - family-names: Gurbych
+    given-names: Sergii
+    orcid: https://orcid.org/0000-0002-3495-0130 
+date-released: 2025-09-25
+version: "1.0.0"
+license: "CC-BY-NC-4.0"
+repository-code: "https://github.com/SergeyGurbich/kraken-htr-vilne-hand-1"
+keywords:
+  - HTR
+  - Kraken
+  - Yiddish
+  - Hebrew script
+  - Digital Humanities
