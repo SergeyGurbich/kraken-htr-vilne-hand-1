@@ -2,12 +2,17 @@
 
 This repository contains a Kraken HTR model trained on a specific Yiddish handwriting style from interwar Vilnius. The model is intended as a baseline for further fine-tuning on similar Eastern European Hebrew-script sources.
 
-## 🧠 Model
+## 🧠 Models
 
 - File: `vilne_yiddish_1.mlmodel`
 - Kraken version: 5.3.0
 - Total epochs: 25 (5 + 15 + 5, with staged learning rates)
 - Character Accuracy (validation): 93.1%
+
+- File: `vilne_yiddish_2.mlmodel`
+- Based on: `vilne_yiddish_1.mlmodel`, further fine-tuned on an additional handwriting style
+- Total epochs: +18 (15 + 3, with staged learning rates)
+- Character Accuracy (validation): 92.2%
 
 ## 📂 Example inference
 
