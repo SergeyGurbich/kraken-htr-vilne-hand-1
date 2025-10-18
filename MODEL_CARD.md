@@ -1,27 +1,43 @@
 # Model Card: Kraken HTR — Vilne Yiddish Hand 1
 
-## 🔸 Model version 3: `vilne_yiddish_3b.mlmodel`
+## 🔸 Model version 1.8: `vilne_yiddish_8a.mlmodel`
 Currently the most advanced model within this series
 
 ### Summary
 
-Fine-tuned continuation of version 2, with an additional handwriting style from the same historical context.  
+Fine-tuned continuation of previous versions, with an additional handwriting style from the same historical context.  
 
 Ground truth data consists mainly of authobiografic manuscripts written in Vilnius, Grodno, Turov and Wloclawek in 1933-1939.
 
 ### Training Set Size
-Pages: 121
-Characters: 134374
-Words: 144 985
-Lines: 2372
+Pages: 308
+Lines: 5822
+Words: 63449
+Characters: 359604 
 
-Accuracy (character-level): 94.5% (validation)
+### Training Data
 
-### Notes
+- Source: Manuscript scans from interwar Vilnius (private dataset).
+- Script: Hebrew/Yiddish (Ashkenazi cursive style).
+- Annotation format: PAGE XML (transcription level: accurate, line-based).
+
+Accuracy (character-level): 95.5% (validation)
+
+### Notes  
 The vast majority of recognition errors are related to the confusion of yud and vav, which are almost indistinguishable in most handwritings from GT
----
 
-## 🔸 Model version 2: `vilne_yiddish_2b.mlmodel`
+### License
+
+- Model weights: CC BY-NC 4.0
+- Scripts and config files: MIT
+
+
+---------------------
+
+
+## Previous models:
+
+## 🔸 Model version 1.2: `vilne_yiddish_2b.mlmodel`
 
 ### Summary
 
@@ -39,7 +55,7 @@ This model aims to improve generalizability across styles found in interwar Yidd
 
 ---
 
-## 🔸 Model version 1: `vilne_yiddish_1.mlmodel`
+## 🔸 Model version 1.1: `vilne_yiddish_1.mlmodel`
 
 ### Summary
 
