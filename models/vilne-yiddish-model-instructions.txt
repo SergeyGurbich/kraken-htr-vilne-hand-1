@@ -1,0 +1,105 @@
+HTR Model "vilne-yiddish"
+------------------------
+
+This is a model for handwritten text recognition (HTR) in Yiddish and Hebrew, trained within the Kraken OCR framework. While it can be used directly from the command line, the most convenient way to work with it is through the graphical interface provided by the eScriptorium platform.
+
+eScriptorium is an open-source application that can be deployed on a web server by individual research teams. 
+
+Note: Researchers who are working on relevant academic projects and have prior experience with eScriptorium, but do not currently have access to an instance, may contact Sergii Gurbych to inquire about possible access to our instance hosted at the Center for the Study of East European Jewry at the Faculty of History, Vilnius University.
+
+Once you receive a username and password, you can log in to the application.
+
+1. Uploading images
+------------------
+
+Log in, go to the “My Projects” section, and create a new project.
+
+Enter a project name. In the “Guidelines” field, you can add a link to an external document (e.g., on GitHub) that describes the project and includes shared processing instructions for the team working on it.
+
+In each project, you will upload the images you are working on. These images are organized into folders, which are called “Documents”.
+
+Within the project, create a new document:
+Enter a title, set the language and text direction. You can edit the other parameters later. For Yiddish or Hebrew documents, select “Hebrew” as the language. 
+To edit the document-level settings later, use the “Descriptions” tab.
+
+(Note: The text direction determines both the direction of the text itself and how the pages are displayed. If you mistakenly set the direction as “left to right“ for Hebrew, punctuation at the end of lines may appear at the beginning.)
+
+Go to the “Images” tab and upload the images to your document.
+
+Large thumbnails of the pages will appear below. To select a page, click the black square at the top of its thumbnail.
+
+Go to the “My Models” section and upload the model file.
+
+2. Image processing
+-------------------
+
+Processing takes place in two stages:
+
+- Segmentation (detecting text regions, marking lines, defining masks) – done by a built-in segmentation model.
+
+- Text recognition and correction – performed using the HTR model.
+
+2.1. Segmentation
+-----------------
+
+Click “Segment,” leave the default settings (but double-check that the line direction – right-to-left or left-to-right – matches the actual direction in your text), and start the segmentation process. If you are segmenting a page for the second time, make sure to check the “Override” box. Once segmentation is complete, a confirmation message will appear. Click “Edit” to view the results.
+
+You will be taken to the editing interface. In the upper right corner, there are five icons to toggle five display windows. The squares represent image metadata, the eye icon shows the original image, the “Segmentation” window displays the blocks, masks, and baselines identified during segmentation, the “Transcription” window shows those same elements but without text (the text will appear after transcription), and finally, there is the window showing recognized text. You can have several windows open at once.
+
+In the segmentation window, the software identifies three elements:
+
+Text blocks (regions). If the page has continuous text, there will be one block; if there are epigraphs, addresses, stamps, etc., multiple zones will be created.
+
+Baselines – these are the lines along which text runs, and they are used for recognition.
+
+Masks – areas surrounding each text line, where text is detected. These are visible in the transcription window and can also be viewed in the segmentation window by clicking the mask icon.
+
+Editing segmentation
+
+At this stage, you can manually correct the segmentation, as automatic results are often imperfect. A common issue is that some text may not have a baseline beneath it, meaning no mask will be created for that portion – the system failed to detect text there.
+
+Baselines
+Blue baselines define lines of text to be recognized. Sometimes, a line ends too early and doesn’t reach the end of the actual text line. In that case, click on the line – two white squares will appear at the ends. You can extend, shorten, rotate, move, or delete the line. You can interact with a line when the cursor changes to a hand. Click on an end square and drag to adjust.
+
+If no line was created for a line of text, you can add one manually: click where it should begin and stretch it across the text line.
+
+If two separate baselines were created for one line of text, you can merge them. Select one line, hold Shift and select the second, then click the “Join” icon on the left or press the “J” key.
+
+Masks
+Once a baseline is in place, the mask around that line’s text is created automatically. If this doesn’t happen, the line may extend beyond the region boundary – shorten it slightly and the mask should appear on its own.
+
+For more on what you can do during segmentation, see: https://escriptorium.readthedocs.io/en/latest/segment/
+
+2.2. Transcription
+------------------
+
+Go to “My Models,” click “Upload Models,” then “Choose File,” and upload the model from your computer.
+
+Go back to “Documents” and select the document you want to process.
+Click “Transcribe,” choose the desired model, and start the transcription process.
+Once it’s finished, click “Edit” to view the results. To display them, enable the “Transcription” window (from the five icons in the upper right corner) and use the dropdown menu in the top right to select the layer or model you used—this will show the recognized text.
+
+The result is usually not perfect and should ideally be reviewed and corrected before being copied or exported.
+
+To view the plain text in a copyable format, enable the “Text” window.
+To correct the transcription line by line, enable the “Transcription” window and disable the “Text” window. Click on the line you want to edit—a panel will appear showing the original line image and the recognized text. Make corrections line by line.
+More on this editing process: https://escriptorium.readthedocs.io/en/latest/transcribe/#editing-with-the-transcription-panel 
+
+There are two ways to use the recognized text:
+
+- Highlight it with your mouse and copy it into another file.
+
+- Or export it together with the image in your desired format.
+
+3. Export
+---------
+
+Go to the “Images” view within your document. Select the pages you want to export, click “Export,” and choose the export settings. In the popup window:
+
+Choose the layer you want to export (all recognized images should be in the same layer),
+
+Choose the export format (for full data, PAGE is optimal; for text only, select a plain text format),
+
+Check the box to “include images” if you want them as well.
+
+Click “Export.” After a few seconds, you’ll receive a confirmation and a “Download” link. Click it to download the ZIP file.

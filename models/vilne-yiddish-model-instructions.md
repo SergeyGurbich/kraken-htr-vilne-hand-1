@@ -2,7 +2,9 @@
 
 This is a model for handwritten text recognition (HTR) in Yiddish and Hebrew, trained within the Kraken OCR framework. While it can be used directly from the command line, the most convenient way to work with it is through the graphical interface provided by the eScriptorium platform.
 
-eScriptorium is an open-source application that can be deployed on a web server by individual research teams. To join the instance hosted by the Center for the Study of East European Jewry at the Faculty of History, Vilnius University, please contact Dr. Sergii Gurbych.
+eScriptorium is an open-source application that can be deployed on a web server by individual research teams. 
+
+> *Note: Researchers who are working on relevant academic projects and have prior experience with eScriptorium, but do not currently have access to an instance, may contact Sergii Gurbych to inquire about possible access to our instance hosted at the Center for the Study of East European Jewry at the Faculty of History, Vilnius University.*
 
 Once you receive a username and password, you can log in to the application.
 
